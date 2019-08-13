@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Developer - Test </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <header class="navbar navbar-static-top bs-docs-nav" id="top">
+      <div class="container">
+        <nav id="bs-navbar" class="">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown pull-right">
+              <a href="#" class="pull-right dropdown-toggle" data-toggle="dropdown" role="button"  id="toggle-my-cart">
+                <span id="my-cart-word">My Cart</span>
+                <span id="my-cart-icon"><i class='fa fa-shopping-cart' aria-hidden='true'></i></span>
+                 ( <span id="add-to-cart-count">0</span> )
+              </a>
+              <ul class="dropdown-menu" id="top-dropdown-menu">
+                <span id="no-items-yet">No items here yet</span>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  </header>
+  <body>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-2" id="main-picture-div">
+        <img src="images/classic-tee.jpg" class="classic-tshirt-image-lg">
+      </div>
+      <div class="col-xs-12 col-sm-4" id="description-section">
+        <div>
+            <div id="shirt-title">Classic Tee</div>
+            <hr id="horizontal-up" class="horizontal">
+            <div><b>$75.00</b></div>
+            <hr id="horizontal-down" class="horizontal">
+            <div id="shirt-main-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed bibendum risus, et imperdiet est. Praesent semper laoreet tincidunt. Nam ornare sodales lorem non eleifend. Maecenas fermentum vulputate nibh, non faucibus tellus cursus lacinia. Maecenas tincidunt nibh varius volutpat lobortis. Maecenas in mauris et lectus tristique efficitur.
+            </div>
+            <div id="shirt-size">
+              SIZE<span class="required-asterisk">*</span> <span id="select-size"></span>
+            </div>
+            <div id="shirt-size-options">
+              <button class="shirt-size-option-button" id="size-S" onclick="selectSize('S')">S</button>
+              <button class="shirt-size-option-button" id="size-M" onclick="selectSize('M')">M</button>
+              <button class="shirt-size-option-button" id="size-L" onclick="selectSize('L')">L</button> 
+              <br>
+              <button id="add-to-cart-button" onmouseover="checkColor()" onmouseout="checkColorOut()" onclick="addToCart()">ADD TO CART</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var lastSize = "";
+    function selectSize(size) {
+      $(".shirt-size-option-button").removeClass("shirt-size-option-button-active");
+      if(lastSize == size) {
+        $("#select-size").text("");
+        lastSize = "";
+      } else {
+        $("#select-size").text(size);
+        $("#size-"+size).addClass("shirt-size-option-button-active");
+        lastSize = size;
+      }
+    }
+
+    function checkColor() {
+      if($("#select-size").text() != "") {
+        $("#add-to-cart-button").css({"background-color":"white","color":"#222222"});
+      }else{
+        $("#add-to-cart-button").css({"background-color":"#222222","color":"white"});
+      }
+    }
+
+    function checkColorOut() {
+      $("#add-to-cart-button").css({"background-color":"white","color":"#222222"});
+      $("#add-to-cart-button").css({"background-color":"white","color":"#222222"});
+    }
+
+    function addToCart() {
+      if($("#select-size").text() == "") {
+        alert("Please select a size");
+      } else {
+        $("#no-items-yet").hide();
+        var items = $("#add-to-cart-count").text() * 1 + 1;
+        $("#add-to-cart-count").text(items);
+
+        var selected = $("#select-size").text();
+        if($(".selected-item-"+selected).length <= 0) {
+          $("#top-dropdown-menu").append(''+
+            '<li class="selected-item-'+selected+'">'+
+                '<div class="row">'+
+                '<div class="col-xs-4">'+
+                  '<img src="images/classic-tee.jpg" class="classic-tshirt-image-sm">'+
+                '</div>'+
+                '<div class="col-xs-8">'+
+                  '<div class="product-description">Classic Tee</div>'+
+                  '<div class="product-description"><span id="size-number-'+selected+'">1</span> x <b>$75.00</b></div>'+
+                  '<div class="product-description">Size: '+selected+'</div>'+
+                '</div>'+
+              '</div>'+
+            '</li>')
+        } else {
+          var size = $("#size-number-"+selected).text() * 1 + 1;
+          $("#size-number-"+selected).text(size);
+        }
+      }
+    }
+  </script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
+</html>
