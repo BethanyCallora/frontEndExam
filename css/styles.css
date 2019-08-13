@@ -1,0 +1,164 @@
+      
+
+      #top {
+        background-color: #F6F6F7;
+        margin-top: 15px;
+        margin-bottom: 40px;
+        min-height: auto;
+      }
+
+      #toggle-my-cart {
+        font-size: 11px;
+        color: #a7a7a7;
+        padding: 5px 10px;
+        width: 100px;
+        text-align: center;
+      }
+      .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+        background-color: white;
+        border: 1px solid #c7c7c7;
+        border-bottom: 0px;
+        color: black !important;
+      }
+      .classic-tshirt-image-sm {
+        width: 70px;
+      }
+      .classic-tshirt-image-lg {
+        width: 400px;
+      }
+      #top-dropdown-menu {
+        padding: 10px;
+        min-width: 300px;
+        box-shadow: none;
+        border-radius: 0px;
+      }
+      .product-description {
+        padding-bottom: 7px;
+        font-size: 13px;
+      }
+      #top-dropdown-menu li {
+        padding: 15px 10px;
+      }
+      #shirt-title {
+        font-size: 20px;
+      }
+      #description-section {
+        padding: 0 0 0 40px;
+      }
+      #horizontal-up {
+        margin-bottom: 8px;
+      }
+      #horizontal-down {
+        margin-top: 8px;
+      }
+      .horizontal {
+        border-top: 1px solid #f9f9f9;
+      }
+      #shirt-main-description {
+        font-size: 13px;
+        color: #888888;
+        font-weight: 300;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        margin-bottom: 30px;
+      }
+      #shirt-size {
+        font-weight: bold;
+        color: #888888;
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+      }
+      .required-asterisk {
+        color: #C90000;
+      }
+      .shirt-size-option-button {
+        border: 1px solid #CCCCCC;
+        text-align: center;
+        height: 40px;
+        width: 40px;
+        color: #CCCCCC;
+        font-size: 11px;
+        outline: none;
+      }
+      .shirt-size-option-button-active {
+        border: 2px solid #222222;
+      }
+      #add-to-cart-button {
+        border: 2px solid #222222;
+        padding: 5px 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin: 20px 0;
+        outline: none;
+        transition: background-color 0.2s ease;
+      }
+      #add-to-cart-button:hover {
+        background-color: #222222;
+        color: white;
+      }
+      #my-cart-icon {
+        display: none;
+      }
+      #toggle-my-cart:hover #my-cart-icon {
+        display: initial;
+      }
+      #toggle-my-cart:hover #my-cart-word {
+        display: none;
+      }
+      #main-picture-div {
+        text-align: center;
+      }
+      #select-size {
+        color: #222222;
+      }
+      .fa-shopping-cart {
+        font-size: 15px;
+        pointer-events: none;
+      }
+
+      @media only {
+        #toggle-my-cart:focus #my-cart-icon {
+          display: initial;
+        }
+        #toggle-my-cart:focus #my-cart-word {
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 1070px) and (min-width: 768px){
+        .classic-tshirt-image-lg {
+          width: 300px;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .classic-tshirt-image-lg {
+          width: 400px;
+        }
+        #description-section {
+          margin-top: 20px;
+          padding: 0 50px;
+        }
+      }
+      @media only screen and (max-width: 500px) {
+        .classic-tshirt-image-lg {
+          width: 90%;
+        }
+        #toggle-my-cart:focus #my-cart-icon {
+          display: initial;
+        }
+        #toggle-my-cart:focus #my-cart-word {
+          display: none;
+        }
+      }
+      @media (max-width: 767px){
+        .navbar-nav .open .dropdown-menu {
+            position: absolute;
+            float: unset;
+            margin-top: unset;
+            background-color: white;
+            border: 1px solid #CCCCCC;
+            -webkit-box-shadow: unset;
+            box-shadow: unset;
+        }
+      }
